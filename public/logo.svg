@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plant stem -->
+  <path d="M16 28V16" stroke="#1B5E20" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Leaves -->
+  <path d="M16 16C16 16 12 12 8 12C4 12 4 16 4 16C4 20 8 24 16 24" stroke="#43A047" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 16C16 16 20 12 24 12C28 12 28 16 28 16C28 20 24 24 16 24" stroke="#43A047" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Top leaf -->
+  <path d="M16 16C16 16 16 8 12 4C8 0 4 4 4 8C4 12 8 16 16 16" stroke="#81C784" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Root -->
+  <path d="M16 28C16 28 14 30 12 30C10 30 10 28 10 28" stroke="#1B5E20" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 28C16 28 18 30 20 30C22 30 22 28 22 28" stroke="#1B5E20" stroke-width="2" stroke-linecap="round"/>
+</svg>
