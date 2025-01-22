@@ -78,7 +78,7 @@ FarmConnectHub/
 ## Team
 
 - **Srinath Manda** - Web Developer
-- **Pandare Durga Prasad** - Web Developer
+- **Pandre Durga Prasad** - Web Developer
 - **Vasanth Adithya M** - Web Developer and Designer
 
 ## License
