@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const genAI = new GoogleGenerativeAI('AIzaSyBnmj4UfDcxRNQbSoiV1xhblEi6bvKoyGE');
+const genAI = new GoogleGenerativeAI('YOUR_GEMINI_API_KEY');  //your gemini api here 
 
 export async function getFarmingRecommendations(formData) {
   try {
