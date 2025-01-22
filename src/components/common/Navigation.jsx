@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaRobot, FaUsers } from 'react-icons/fa'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,7 +10,9 @@ export default function Navigation() {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
-    { name: 'Creators Team', path: '/team' },
+    { name: 'Chatbot', path: '/suggestionbot', icon: <FaRobot className="inline-block" /> },
+    { name: 'Price Calculator', path: '/price-calculator' },
+    { name: 'Creators Team', path: '/team', icon: <FaUsers className="inline-block" /> },
     { name: 'Contact', path: '/contact' }
   ]
 
@@ -40,9 +42,9 @@ export default function Navigation() {
                   isActive(item.path)
                     ? 'text-primary font-semibold'
                     : 'text-gray-600 hover:text-primary'
-                } transition-colors duration-200`}
+                } transition-colors duration-200 flex items-center gap-1`}
               >
-                {item.name}
+                {item.icon} {item.name}
               </Link>
             ))}
           </div>
@@ -84,10 +86,10 @@ export default function Navigation() {
                     isActive(item.path)
                       ? 'text-primary font-semibold'
                       : 'text-gray-600 hover:text-primary'
-                  } transition-colors duration-200 px-4 py-2`}
+                  } transition-colors duration-200 px-4 py-2 flex items-center gap-1`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {item.icon} {item.name}
                 </Link>
               ))}
               <hr className="my-2 border-gray-200" />

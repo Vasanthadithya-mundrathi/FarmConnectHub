@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     name: 'PANDRE DURGA PRASAD',
-    role: 'WEB DEVELOPER',
+    role: 'WEB DEVELOPER AND TESTER',
     education: 'STUDENT OF CBIT',
     rollNo: '160123729306',
     interests: 'MACHINE LEARNING & GENERATIVE AI',
