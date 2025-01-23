@@ -9,17 +9,17 @@ import Rentals from '../components/services/Rentals'
 const serviceLinks = [
   {
     title: 'Instruction about farming',
-    path: '/services/instructions',
+    path: '/services/farming-instructions',
     component: FarmingInstructions
   },
   {
     title: 'Seasoning crops',
-    path: '/services/crops',
+    path: '/services/seasonal-crops',
     component: SeasonalCrops
   },
   {
     title: 'Awareness of technology in agriculture',
-    path: '/services/technology',
+    path: '/services/tech-awareness',
     component: TechAwareness
   },
   {
@@ -29,7 +29,7 @@ const serviceLinks = [
   },
   {
     title: 'Fertilizer and Pesticides',
-    path: '/services/fertilizer',
+    path: '/services/fertilizer-pesticides',
     component: FertilizerPesticides
   }
 ]
@@ -46,52 +46,60 @@ const rentalServices = [
 
 export default function Services() {
   return (
-    <div className="flex">
-      {/* Sidebar */}
-      <div className="w-64 bg-white shadow-lg p-6 rounded-lg">
-        <h2 className="text-xl font-bold mb-6">List of Services</h2>
-        <nav className="space-y-2">
-          {serviceLinks.map((service) => (
-            <Link
-              key={service.path}
-              to={service.path}
-              className="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white rounded-lg transition-colors"
-            >
-              {service.title}
-            </Link>
-          ))}
-
-          {/* Rentals Dropdown */}
-          <div className="relative group">
-            <button className="w-full px-4 py-2 text-left text-gray-700 hover:bg-primary hover:text-white rounded-lg transition-colors">
-              Rentals
-            </button>
-            <div className="hidden group-hover:block absolute left-full top-0 ml-2 w-64 bg-white shadow-lg rounded-lg p-2">
-              {rentalServices.map((rental) => (
+    <div className="min-h-screen bg-gray-50 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex">
+          {/* Sidebar */}
+          <div className="w-64 bg-white shadow-lg p-6 rounded-lg">
+            <h2 className="text-xl font-bold mb-6">List of Services</h2>
+            <nav className="space-y-2">
+              {serviceLinks.map((service) => (
                 <Link
-                  key={rental.path}
-                  to={rental.path}
+                  key={service.path}
+                  to={service.path}
                   className="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white rounded-lg transition-colors"
                 >
-                  {rental.title}
+                  {service.title}
                 </Link>
               ))}
-            </div>
-          </div>
-        </nav>
-      </div>
 
-      {/* Main Content */}
-      <div className="flex-1 ml-8">
-        <div id="google_translate_element" className="mb-6"></div>
-        <Routes>
-          <Route path="instructions" element={<FarmingInstructions />} />
-          <Route path="crops" element={<SeasonalCrops />} />
-          <Route path="technology" element={<TechAwareness />} />
-          <Route path="documentation" element={<Documentation />} />
-          <Route path="fertilizer" element={<FertilizerPesticides />} />
-          <Route path="rentals/*" element={<Rentals />} />
-        </Routes>
+              {/* Rentals Dropdown */}
+              <div className="relative group">
+                <button className="w-full px-4 py-2 text-left text-gray-700 hover:bg-primary hover:text-white rounded-lg transition-colors">
+                  Rentals
+                </button>
+                <div className="hidden group-hover:block absolute left-full top-0 ml-2 w-64 bg-white shadow-lg rounded-lg p-2">
+                  {rentalServices.map((rental) => (
+                    <Link
+                      key={rental.path}
+                      to={rental.path}
+                      className="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white rounded-lg transition-colors"
+                    >
+                      {rental.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1 ml-8 bg-white p-6 rounded-lg shadow-lg">
+            <div id="google_translate_element" className="mb-6"></div>
+            <div className="text-center py-8">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h1>
+              <p className="text-lg text-gray-600">Select a service from the sidebar to get started</p>
+            </div>
+            <Routes>
+              <Route path="farming-instructions" element={<FarmingInstructions />} />
+              <Route path="seasonal-crops" element={<SeasonalCrops />} />
+              <Route path="tech-awareness" element={<TechAwareness />} />
+              <Route path="documentation" element={<Documentation />} />
+              <Route path="fertilizer-pesticides" element={<FertilizerPesticides />} />
+              <Route path="rentals/*" element={<Rentals />} />
+            </Routes>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaBars, FaTimes, FaRobot, FaUsers } from 'react-icons/fa'
+import { FaBars, FaTimes, FaRobot, FaUsers, FaFileAlt, FaStore } from 'react-icons/fa'
+import { Dialog, Popover } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +14,14 @@ export default function Navigation() {
     { name: 'About', path: '/about' },
     { name: 'Chatbot', path: '/suggestionbot', icon: <FaRobot className="inline-block" /> },
     { name: 'Price Calculator', path: '/price-calculator' },
+  ]
+
+  const moreMenuItems = [
+    { name: 'Community', path: '/community' },
+    { name: 'Weather Report', path: '/weather' },
+    { name: 'Store', path: '/store', icon: <FaStore className="inline-block" /> },
+    { name: 'Agri-Policies', path: '/agri-policies', icon: <FaFileAlt className="inline-block" /> },
     { name: 'Creators Team', path: '/team', icon: <FaUsers className="inline-block" /> },
-    { name: 'Contact', path: '/contact' }
   ]
 
   const isActive = (path) => {
@@ -47,6 +55,34 @@ export default function Navigation() {
                 {item.icon} {item.name}
               </Link>
             ))}
+            {/* More Menu */}
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button className="flex items-center text-sm font-semibold leading-6 text-gray-900 hover:text-green-600 focus:outline-none">
+                    More
+                    <ChevronDownIcon
+                      className={`ml-2 h-4 w-4 transition-transform ${
+                        open ? 'rotate-180' : ''
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+
+                  <Popover.Panel className="absolute right-0 z-10 mt-3 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    {moreMenuItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        {item.icon} {item.name}
+                      </Link>
+                    ))}
+                  </Popover.Panel>
+                </>
+              )}
+            </Popover>
           </div>
 
           {/* Authentication Links */}
@@ -79,6 +115,20 @@ export default function Navigation() {
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`${
+                    isActive(item.path)
+                      ? 'text-primary font-semibold'
+                      : 'text-gray-600 hover:text-primary'
+                  } transition-colors duration-200 px-4 py-2 flex items-center gap-1`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.icon} {item.name}
+                </Link>
+              ))}
+              {moreMenuItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}

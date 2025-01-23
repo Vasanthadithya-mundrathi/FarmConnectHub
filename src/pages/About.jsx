@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     name: 'PANDRE DURGA PRASAD',
-    role: 'WEB DEVELOPER',
+    role: 'WEB TESTER',
     education: 'STUDENT OF CBIT',
     rollNo: '160123729306',
     interests: 'MACHINE LEARNING & GENERATIVE AI',
@@ -29,7 +29,7 @@ const teamMembers = [
     }
   },
   {
-    name: 'VASANTH ADITHYA M',
+    name: 'VASANTH ADITHYA',
     role: 'WEB DEVELOPER AND DESIGNER',
     education: 'STUDENT OF CBIT',
     rollNo: '160123749049',
